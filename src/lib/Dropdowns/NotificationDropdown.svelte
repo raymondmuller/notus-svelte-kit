@@ -2,6 +2,7 @@
 	import { createPopper } from '@popperjs/core';
 	import DropdownDivider from './DropdownDivider.svelte';
 	import DropdownLink from './DropdownLink.svelte';
+	import clickOutside from '../../actions/useClickOutside';
 
 	let dropdownPopoverShow = false;
 
@@ -19,7 +20,7 @@
 		}
 	};
 
-	const closeDropdown = (e) => {
+	const closeDropdown = (e = null) => {
 		e?.preventDefault();
 		dropdownPopoverShow = false;
 	};
@@ -30,6 +31,7 @@
 		class="text-blueGray-500 block py-1 px-3"
 		href="#1"
 		bind:this={btnDropdownRef}
+		use:clickOutside={closeDropdown}
 		on:click|preventDefault={toggleDropdown}
 	>
 		<i class="fas fa-bell" />
@@ -44,6 +46,6 @@
 		<DropdownLink href="#3" on:click={closeDropdown}>Another action</DropdownLink>
 		<DropdownLink href="#4" on:click={closeDropdown}>Something else here</DropdownLink>
 		<DropdownDivider />
-		<DropdownLink href="#5" on:click={closeDropdown}>Separated link</DropdownLink>
+		<DropdownLink href="#5" on:click={closeDropdown} on:clickOutside>Separated link</DropdownLink>
 	</div>
 </div>

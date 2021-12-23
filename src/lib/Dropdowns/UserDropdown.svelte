@@ -2,6 +2,7 @@
 	import { createPopper } from '@popperjs/core';
 	import DropdownDivider from './DropdownDivider.svelte';
 	import DropdownLink from './DropdownLink.svelte';
+	import clickOutside from '../../actions/useClickOutside';
 
 	let dropdownPopoverShow = false;
 
@@ -30,6 +31,7 @@
 		class="text-blueGray-500 block"
 		href="#1"
 		bind:this={btnDropdownRef}
+		use:clickOutside={closeDropdown}
 		on:click|preventDefault={toggleDropdown}
 	>
 		<div class="items-center flex">

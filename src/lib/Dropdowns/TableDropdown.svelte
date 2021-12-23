@@ -1,6 +1,7 @@
 <script>
 	import { createPopper } from '@popperjs/core';
 	import DropdownLink from './DropdownLink.svelte';
+	import clickOutside from '../../actions/useClickOutside';
 
 	let dropdownPopoverShow = false;
 
@@ -31,6 +32,7 @@
 		class="text-blueGray-500 py-1 px-3"
 		href="#1"
 		bind:this={btnDropdownRef}
+		use:clickOutside={closeDropdown}
 		on:click|preventDefault={toggleDropdown}
 	>
 		<i class="fas fa-ellipsis-v" class:text-white={dark} />

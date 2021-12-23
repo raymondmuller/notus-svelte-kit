@@ -3,7 +3,7 @@
 	import DropdownDivider from './DropdownDivider.svelte';
 	import DropdownHeading from './DropdownHeading.svelte';
 	import DropdownLink from './DropdownLink.svelte';
-
+	import clickOutside from '../../actions/useClickOutside';
 	let dropdownPopoverShow = false;
 
 	let btnDropdownRef;
@@ -30,6 +30,7 @@
 		class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
 		href="#1"
 		bind:this={btnDropdownRef}
+		use:clickOutside={closeDropdown}
 		on:click|preventDefault={toggleDropdown}
 	>
 		Demo Pages
