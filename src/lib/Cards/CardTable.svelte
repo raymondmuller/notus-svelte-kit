@@ -34,36 +34,42 @@
 			</thead>
 			<tbody>
 				<TableRow
+					{dark}
 					name="Notus Svelte"
 					image="../assets/img/svelte-logo.svg"
 					budget="100,000"
 					status="completed"
 				/>
 				<TableRow
+					{dark}
 					name="Argon Design System"
 					image="../assets/img/bootstrap.jpg"
 					budget="20,000"
 					status="pending"
 				/>
 				<TableRow
+					{dark}
 					name="Angular Now UI Kit PRO"
 					image="../assets/img/angular.jpg"
 					budget="1,800"
 					status="completed"
 				/>
 				<TableRow
+					{dark}
 					name="Black Dashboard Sketch"
 					image="../assets/img/sketch.jpg"
 					budget="3,200"
 					status="delayed"
 				/>
 				<TableRow
+					{dark}
 					name="React Material Dashboard"
 					image="../assets/img/react.jpg"
 					budget="4,400"
 					status="on schedule"
 				/>
 				<TableRow
+					{dark}
 					name="Vue Material Dashboard"
 					image="../assets/img/vue.jpg"
 					budget="2,400"
